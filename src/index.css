@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Lato:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MarketGlow Design System - Professional Digital Agency */
+
+@layer base {
+  :root {
+    /* MarketGlow palette */
+    /* #FFFFFF, #333333, #FFC107 */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Primary - #333333 */
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - #FFFFFF */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 20%;
+
+    /* Muted (neutral derived from palette) */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent - #FFC107 */
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 20%;
+
+    /* Glow variants for gradients */
+    --accent-glow: 0 0% 100%;
+    --primary-glow: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 45 100% 51%;
+
+    --radius: 0.75rem;
+
+    /* Custom shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 20% / 0.10);
+    --shadow-glow: 0 8px 40px -8px hsl(45 100% 51% / 0.30);
+    --shadow-card: 0 2px 16px -4px hsl(0 0% 20% / 0.12);
+  }
+
+  .dark {
+    --background: 0 0% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 20%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 24%;
+    --input: 0 0% 24%;
+    --ring: 45 100% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+  }
+
+  .gradient-accent {
+    background-image: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
